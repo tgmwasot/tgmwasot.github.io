@@ -24,7 +24,7 @@ span {
     padding-right: 20px; 
     border-style: solid;
     border-color: blue;
-    border: 5px;
+    border-width: 5px;
     background-color: yellow;
 
 }
@@ -34,10 +34,35 @@ span.a {display:inline;}
 span.b {display:block;}
 span.c {display:inline-block;}
 
-img alt="cat icon" {
-  position:fixed;
-  bottom: 0;
-  right: 0;
+#img1 {
+    position:fixed;
+    bottom: 0;
+    right: 0;
+    
+  }
   
-}
+  #img2 {
+    position:relative;
+    left: 50px;
+    bottom:150px;
+  }
+  
+  #img3 {
+    position: relative;
+    right:250px;
+    left:50px;
+  }
+  
+  nav {
+    position: sticky;
+    top:0;
+    background-color:green;
+    opacity: 90;
+    padding: 5px;
+    font-size: 20px;
+    z-index: 1;
+    
+  }
+  
+  
 
