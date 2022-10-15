@@ -70,9 +70,9 @@ function sumdigits() {
 
 
 //getting the button with id "convert" and storing it in a variable 
-let enter = document.getElementById("enter")
+let combine = document.getElementById("combine")
 //using the event listener to invoke the function "weather" when the user clicks on the button
-enter.addEventListener("click",Names)
+combine.addEventListener("click",Names)
 
 function Names () {
 
@@ -84,20 +84,32 @@ function Names () {
     
 
     //creating the full name by adding the first and last name input from the user
-    let fullname1= first + last;
+    
 
-    // if (title != " ")
+    if (first.length == 0 || last.length == 0 ) {
 
-    // let title1 = title + .
+        document.getElementById("first").value = "Enter Value"
+        document.getElementById("last").value = "Enter Value"
+    }
+     else {
 
-       
-    // if (suffix != " ")
+        let fullname1= title + first + last + suffix;
 
-    // let suffix1 = , + suffix + .
+     }
+
+     //storing the results in sum to pass it to the textbox
+    let fullname = document.getElementById("fullname")
+    fullname.value= fullname1
+
+    console.log(fullname)
+
+    // if (title.length>0)
+        // let title1 = title
+   
+    // if (suffix.length>0)
+        // let suffix1 = suffix
 
 
-
-    // console.log(fullname1)
 
          
 
