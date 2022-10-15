@@ -72,7 +72,7 @@ function sumdigits() {
 //getting the button with id "convert" and storing it in a variable 
 let combine = document.getElementById("combine")
 //using the event listener to invoke the function "weather" when the user clicks on the button
-combine.addEventListener("click",Names)
+ combine.addEventListener("click",Names)
 
 function Names () {
 
