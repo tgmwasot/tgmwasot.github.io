@@ -92,9 +92,25 @@ function Names() {
         document.getElementById("first").value = "Enter Value"
         document.getElementById("last").value = "Enter Value"
     }
-     else {
+     else if (title.length === 0) { 
 
-         fullname1= title + ". " + first + " " + last + ", " + suffix;
+         fullname1= first + " " + last + ", " + suffix
+
+     }
+
+     else if (suffix.length === 0) {
+
+        fullname1= title + ". " + first + " " + last
+
+     }
+
+     else if (suffix.length === 0 && title.length === 0) { 
+        fullname1= first + " " + last 
+
+     }
+
+     else {
+        fullname1= title + ". " +first + " " + last + ", " + suffix
 
      }
 
