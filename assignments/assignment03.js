@@ -94,7 +94,7 @@ function Names() {
     }
      else {
 
-         fullname1= title + first + last + suffix;
+         fullname1= title + ". " + first + " " + last + ", " + suffix;
 
      }
 
