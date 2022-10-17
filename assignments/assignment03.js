@@ -69,31 +69,32 @@ function sumdigits() {
 }
 
 
-//getting the button with id "convert" and storing it in a variable 
+//getting the button with id "combine" and storing it in a variable 
 let combine = document.getElementById("combine")
-//using the event listener to invoke the function "weather" when the user clicks on the button
- combine.addEventListener("click",Names)
+//using the event listener to invoke the function "names" when the user clicks on the button
+  combine.addEventListener("click",Names)
 
-function Names () {
+function Names() {
 
     //getting the user input and storing them in a variable
     let title = document.getElementById ("title").value
     let first = document.getElementById ("first").value
     let last = document.getElementById ("last").value
     let suffix = document.getElementById ("suffix").value
-    
+    let fullname1= ""
+
 
     //creating the full name by adding the first and last name input from the user
     
 
-    if (first.length == 0 || last.length == 0 ) {
+    if (first.length === 0 || last.length === 0 ) {
 
         document.getElementById("first").value = "Enter Value"
         document.getElementById("last").value = "Enter Value"
     }
      else {
 
-        let fullname1= title + first + last + suffix;
+         fullname1= title + first + last + suffix;
 
      }
 
