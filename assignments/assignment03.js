@@ -118,14 +118,6 @@ function Names() {
     let fullname = document.getElementById("fullname")
     fullname.value= fullname1
 
-    console.log(fullname)
-
-    // if (title.length>0)
-        // let title1 = title
-   
-    // if (suffix.length>0)
-        // let suffix1 = suffix
-
 
 
          
