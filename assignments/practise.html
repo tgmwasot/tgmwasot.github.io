@@ -1,0 +1,11 @@
+
+
+ $(document).ready(function() {
+      
+    $('button').on("click",function() {
+    let pounds = parseInt($([name='pounds']").val());
+    let inches = parseInt(12 * $("[name='feet']").val());
+    inches += parseInt($("[name='inches']").val());
+    let BMI = (pounds * 703 ) / Math.pow(inches, 2);
+    }
+    }
