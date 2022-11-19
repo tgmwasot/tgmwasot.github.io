@@ -1,8 +1,9 @@
 
 
+
 let arr1 = [];
 for(i = 0; i < 10; i++) {
-arr1[i] = Math.floor( Math.random() * 200 ) + 100
+arr1[i] = Math.floor( Math.random() * 900 ) + 100
 
 console.log (arr1[i])
 }
@@ -16,11 +17,11 @@ console.log (arr2[i])
 
 
 let arr3 = [
-    {fname: taty, lname: joseph, title:miss, sufffix:dr, age:21},
-    {fname: nate, lname: watson, title:mr,   sufffix:dr, age:24},
-    {fname: sharan, lname: marley, title:miss, sufffix:dr, age:17},
-    {fname: kim, lname: jenner, title:miss, sufffix:dr, age:36},
-    {fname: khloe, lname: kardashian, title:miss, sufffix:dr, age:33},
+    {fname: "taty", lname: "joseph", title:"miss", sufffix:"dr", age:21},
+    {fname: "nate", lname: "watson", title:"mr",   sufffix:"dr", age:24},
+    {fname: "sharan", lname: "marley", title:"miss", sufffix:"dr", age:17},
+    {fname: "kim", lname: "jenner", title:"miss", sufffix:"dr", age:36},
+    {fname: "khloe", lname: "kardashian", title:"miss", sufffix:"dr", age:33},
 ]
 
 let arr4 = [-100, 0, 100, 1900, 1904, 2000]
@@ -47,19 +48,37 @@ let sumSquare = (number1) => ((number1 * number1) + number1)
 
 let sum = " "
 
-let isLeapyear = (year) => { if   ((0 == year % 4) && (0 != year % 100) || (0 == year % 400))  sum+= year; return 'true' }
-let years = arr4.map((year) => { if   ((0 == year % 4) && (0 != year % 100) || (0 == year % 400))  sum+= year; return 'true' })
+ let isLeapyear = (year) => { arr4.map((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0); return year }
+ 
 
-let timeFallen = (distance) => distance/speed
+//let isLeapyear = (year) => { if   ((0 == year % 4) && (0 != year % 100) || (0 == year % 400))  sum+= year; return 'true' }
 
-let getFirstName=(item) => (item.fname)
 
-let dot
+//let years = arr4.map((year) => { if   ((0 == year % 4) && (0 != year % 100) || (0 == year % 400))  sum+= year; return sum })
 
-dot = (arr1,arr2) => arr1.map((x,i) => arr1[i] * arr2[i])
+
+
+let timeFallen = (distance) => Math.sqrt(distance)/16
+
+
 
 let sumArr = arr2.filter(values=> {return values%2==0})
 
 let volumeArr= arr4.map(radius=>sphereR(radius))
 
+let sumArctan = arr5.map(arctan)  //
+
 // let sumArr = (values) => { if values % 2 == 0 return values}
+
+arr3.map(person =>{
+    console.log(person.fname + " " + person.lname)
+   })
+
+arr1.map((x,i) => console.log(arr1[i] * arr2[i]))
+
+// arr2.filter(e => console.log(e%2==0))
+
+arr2.filter(e=>{
+    if(e%2==0)
+        console.log(e)
+})
