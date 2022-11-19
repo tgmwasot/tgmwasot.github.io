@@ -1,3 +1,6 @@
+// Filename: assignment04.js
+// Author: Tania Mwasote (tgmwasot@svsu.edu)
+// Description: Javascript
 
 //Arrays
 //10 random integers between 100 and 1000

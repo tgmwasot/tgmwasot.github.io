@@ -1,3 +1,9 @@
+// Filename: assignment04part2.js
+// Author: Tania Mwasote (tgmwasot@svsu.edu)
+// Description: Javascript
+
+
+//Event listeners for the functions and radio buttons
 document
   .getElementById("loadjson")
   .addEventListener("click", loadJson);
@@ -8,7 +14,7 @@ document
   .getElementById("loadnextcountry")
   .addEventListener("click", loadNextCountry);
 
-
+//
 let country = 0
 let json ={}
 json.Countries = []
