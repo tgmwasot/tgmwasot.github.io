@@ -62,7 +62,7 @@ let sumSquare = (number1) => ((number1 * number1) + number1)
 
 
 //leap year arrow function
- let isLeapyear = (year) =>  if { ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0) } return true 
+// let isLeapyear = (year) =>  if { ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0) } return true 
  
 //let isLeapyear = (year) => { if   ((0 == year % 4) && (0 != year % 100) || (0 == year % 400))  sum+= year; return 'true' }
 
