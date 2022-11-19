@@ -46,7 +46,7 @@ let arctan = (val) => Math.atan( Math.PI + val)
 
 let sumSquare = (number1) => ((number1 * number1) + number1)
 
-let sum = " "
+
 
  let isLeapyear = (year) => { arr4.map((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0); return year }
  
@@ -76,9 +76,17 @@ arr3.map(person =>{
 
 arr1.map((x,i) => console.log(arr1[i] * arr2[i]))
 
-// arr2.filter(e => console.log(e%2==0))
 
-arr2.filter(e=>{
+//arr2.filter
+
+let sum = 0;
+
+arr2.map(e=>{
     if(e%2==0)
-        console.log(e)
+
+    sum +=e
+
+
 })
+
+console.log(sum)
