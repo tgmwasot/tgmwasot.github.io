@@ -94,3 +94,5 @@ console.log(sum)
 arr5.map(r => console.log(sphereR(r)))
 
 arr6.map(distance => console.log(timeFallen(distance)))
+
+arr5.reduce(r => coonsole.log(arctan(r)))
