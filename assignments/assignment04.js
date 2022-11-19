@@ -72,6 +72,15 @@ let timeFallen = (distance) => Math.sqrt(distance)/16
 
 
 //Methods
+//sum of leapyear
+let total = 0;
+
+
+arr4.map(year => {
+    if(((year % 4 == 0) && (year % 100 != 0)) || (year % 400 ==0))
+        total+=year
+})
+console.log(total)
 //Getting full name
 arr3.map(person =>{
     console.log(person.fname + " " + person.lname)
