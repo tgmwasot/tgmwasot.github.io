@@ -15,7 +15,7 @@
 			td, th, td input {text-align: right;}
       #loan_table {background-color: pink;}
 		</style>
-
+<script defer src="/assignments/assignment05.js"></script>
 	</head>
 
 	<body onload="loadDoc();">
@@ -77,7 +77,11 @@
 								</tr>
 							</table>
 							<br />
-							<button id="Re-calculate">Re-calculate</button> 
+
+                            <!-- Event listener and other buttons -->
+                            <button type="button" class="btn btn-primary" 
+                        ng-click="processForm();">Re-calculate</button> 
+							 
 						</div>
 					</div>
 
@@ -93,6 +97,8 @@
 									<th>Int Amt</th>
 									<th>YE Bal</th>
 								</tr>
+
+                                <!--  Hereee -->
 								<tr>
 									<td><span id="pmt_year01">2025</span></td>
 									<td><span id="pmt_amt01">$6,500.00</span></td>
@@ -116,5 +122,8 @@
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
     
+
+
+  <!-- Add script for angular javascript -->
 	</body>
 </html>
