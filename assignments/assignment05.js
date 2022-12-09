@@ -77,11 +77,23 @@ var loans = [
     
   } // end: function loadDoc()
   
-  
+  //WYD
   function toComma(value) {
       return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
-  
+
+  $("#save").on("click", function() {
+    localStorage.setItem("info", JSON.stringify(loans));
+ });
+// come back here for name of variables and update form
+  $("#restore").on("click", function() {
+       loans = JSON.parse(localStorage.getItem("info"));
+      for (let i=1; i<6; i++) {
+        $("#loan_year0" + i).val(loans[i-1].loan_year);
+        $("#loan_amt0" + i).val(loans[i-1].loan_amount.toFixed(2));
+        $("#loan_int0" + i).val(loans[i-1].loan_int_rate);
+      }});
+
   function updateLoansArray() {
     // update the loans array
     loans[0].loan_year = parseInt($("#loan_year01").val()); // jquery
@@ -94,4 +106,5 @@ var loans = [
 
   //function update form
 
-  //Angular javascript
+
+  //Angular javascript   
