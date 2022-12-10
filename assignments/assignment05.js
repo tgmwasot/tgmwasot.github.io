@@ -95,7 +95,15 @@ var loans = [
       }});
 
   function updateLoansArray() {
+
+    let equal = true;
+    let loanYear = /20[\d]{2}/;
+    if(!loanYear.test($("#loan_year01").val())) {
+        equal = false; }
+    
     // update the loans array
+
+    if(equal) {
     loans[0].loan_year = parseInt($("#loan_year01").val()); // jquery
     // update all the years in the "year" column
     for(var i=1; i<5; i++) {
@@ -104,7 +112,45 @@ var loans = [
     }
   }
 
-  //function update form
+  let loanAmount = /\d*$|\d*\.\d*?/
+  for (i = 1; i < 6; i++) {
+    if(!loanAmount.test($("#loan_amt0${i}").val())) {
+      equal = false;
+    } }
 
+      if(equal) {
+        for(i = 1; i<6; i++){
+            loans[i-1].loan_amount = parseFloat($("#loan_amt0${i}").val()).toFixed(2);;
 
+      } }
+
+      let loanInterest = /[0]?[\.]\d*/
+      if(!loanInterest.test($(`#loan_int01`).val())) {
+        valid = false;
+      }
+        if(equal) {
+        for(i=0; i<5; i++){
+            loans[i].loan_int_rate = parseFloat($("#loan_int01").val());
+        }
+    }
+}
+      
+  function updateForm () {
+ 
+  let reminder = 0;
+  let sum = 0;
+
+  for(let i = 1; i < 6; i++) {
+    sum += loans[i-1].loan_amount;
+    reminder += loans[i-1].loan_amount;
+    reminder += (1 + loans[i-1].loan_int_rate);
+    $("#loan_bal0" + i).html("$" + toComma(balance.toFixed(2))); }
+
+    $("#loan_int_accrued").html("$" + toComma((reminder - sum).toFixed(2))); }
   //Angular javascript   
+
+  let app = angular.module("calculator", []);
+
+  app.controller("mycontroller", function ($scope) {
+    
+    )
