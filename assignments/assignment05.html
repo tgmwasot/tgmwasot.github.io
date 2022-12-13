@@ -80,10 +80,10 @@
 							</table>
 							<br />
 
-                            <!-- Event listener and other buttons -->
+                            <!-- Event listener buttons -->
                             <button type="button" class="btn btn-primary" 
                         ng-click="processForm();">Re-calculate</button> 
-                    <!-- store and reetrive buttons for local storage -->
+                    <!-- store and reetrive buttons  -->
                         <button type="button" class="btn btn-secondary" 
                         onclick="save();">Save</button>
 								<button type="button" class="btn btn-secondary" 
@@ -106,11 +106,18 @@
 								</tr>
 
                                 <!--  Hereee -->
-								<tr>
+								<!-- <tr>  ng-repeat="x in payments">
 									<td><span id="pmt_year01">2025</span></td>
 									<td><span id="pmt_amt01">$6,500.00</span></td>
 									<td><span id="pmt_int01">$2,297.60</span></td>
 									<td><span id="pmt_bal01">$53,017.22</span></td>
+								</tr> -->
+
+                                <tr ng-repeat= "x in payments">
+									<td>{{ x.year }}</td>
+									<td>{{ x.payment }}</td>
+									<td>{{ x.amt }}</td>
+									<td>{{ x.ye }}</td>
 								</tr>
 								
 							</table>
@@ -132,5 +139,7 @@
 
 
   <!-- Add script for angular javascript -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 	</body>
 </html>

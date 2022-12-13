@@ -11,7 +11,16 @@ var loans = [
 // initialize stuff
   
   // --- function: loadDoc() ---
-  
+  let loanWithInterest = 0;
+
+  function toComma(value) {
+    return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+
+  let toMoney = (value) => {
+    return `\$${toComma(value.toFixed(2))}`; 
+  }
+
   function loadDoc() {
     
     // pre-fill defaults for first loan year
@@ -21,7 +30,7 @@ var loans = [
     $("#loan_year0" + 1).val(defaultYear++); // jquery
     // console.log(defaultYear) // debug: defaultYear increments
     var defaultLoanAmount = loans[0].loan_amount;
-    //fix these
+    
    // document.getElementById("loan_amt0" + 1).value 
      // = defaultLoanAmount.toFixed(2);
 
@@ -33,7 +42,7 @@ var loans = [
 
     //Had to replace a bunch of stuff might not work
     var loanWithInterest = loans[0].loan_amount * (1 + loans[0].loan_int_rate);
-    $("#loan_bal0" + 1).text(toComma(loanWithInterest.toFixed(2)));
+    $("#loan_bal0" + 1).text(toMoney(loanWithInterest));
     
 
     // pre-fill defaults for other loan years
@@ -54,7 +63,7 @@ var loans = [
      loanWithInterest 
        = (loanWithInterest + defaultLoanAmount) 
        * (1 + defaultInterestRate);
-     $("loan_bal0" + i).text(toComma(loanWithInterest.toFixed(2)));
+     $("loan_bal0" + i).text(toMoney(loanWithInterest));
       } // end: "for" loop
     
     // all input fields: ut {text-align: right;}
@@ -77,7 +86,7 @@ var loans = [
     
   } // end: function loadDoc()
   
-  //WYD
+  
   function toComma(value) {
       return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
@@ -85,7 +94,7 @@ var loans = [
   $("#save").on("click", function() {
     localStorage.setItem("info", JSON.stringify(loans));
  });
-// come back here for name of variables and update form
+
   $("#restore").on("click", function() {
        loans = JSON.parse(localStorage.getItem("info"));
       for (let i=1; i<6; i++) {
@@ -153,4 +162,36 @@ var loans = [
 
   app.controller("mycontroller", function ($scope) {
     
-    )
+    $scope.payments = [];
+    $scope.processForm = function () {
+
+        updateForm();
+
+        let total = reminder;
+        let interest = loans[0].loan_int_rate;
+        let r = interest / 12;
+        let n = 11;
+
+        let pay = 12 * (total / ((((1+r)**(n*12))-1)/(r *(1+r)**(n*12))));
+        for (let i = 0; i< 10; i++) {
+
+            total -= pay
+            let rate = total * (interest);
+
+            $scope.payments[i] = {
+                "year":loans[4].loan_year + i + 1,
+                "payment": "$" + pay.toFixed(2),
+                "amt": "$" + rate.toFixed(2),
+                "ye": "$" + (total += rate).toFixed(2)
+            }
+
+            }
+            $scope.payments[10] = {
+                "year":loans[4].loan_year + 11,
+                "payment": "$" + total.toFixed(2),
+                "amt": "$" + 0,
+                "ye": "$" + 0
+        }
+    }
+  }
+    );
