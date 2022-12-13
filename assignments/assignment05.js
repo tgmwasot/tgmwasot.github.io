@@ -12,6 +12,8 @@ var loans = [
   
   // --- function: loadDoc() ---
   let loanWithInterest = 0;
+  let rate = 0;
+  let payments;
 
   function toComma(value) {
     return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -90,7 +92,7 @@ var loans = [
   function toComma(value) {
       return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
-
+//buttons
   $("#save").on("click", function() {
     localStorage.setItem("info", JSON.stringify(loans));
  });
@@ -163,7 +165,7 @@ var loans = [
   app.controller("mycontroller", function ($scope) {
     
     $scope.payments = [];
-    $scope.processForm = function () {
+    $scope.populate = function () {
 
         updateForm();
 
